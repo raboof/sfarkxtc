@@ -36,10 +36,6 @@ char	*ThisVersion = "1.01 beta";	// Version of program
 
 #include "sfArkLib.h"
 
-// sfArkLib functions...
-extern unsigned short	GetsfArkLibVersion(void);
-extern int Decode(const char *InFileName, const char *ReqOutFileName);
-
 // Application-supplied functions...
 void msg(const char *MessageText, int Flags);				// Message display function
 void UpdateProgress(int ProgressPercent);						// Progress indication
@@ -115,7 +111,7 @@ int main(int argc, char** argv)
 
 	printf("======================================================================\n");
 	printf("%s %s ", ThisProg, ThisVersion);
-	printf("(using sfArkLib version: %d)\n", GetsfArkLibVersion());
+	printf("(using sfArkLib version: %d)\n", sfkl_GetVersion());
 	printf("copyright (c) 1998-2002 melodymachine.com, free for non-commercial use\n");
 	printf("======================================================================\n");
         
@@ -148,7 +144,7 @@ int main(int argc, char** argv)
 	printf("Uncompressing %s to %s...\n", InFileName, OutFileName);
 
 	long StartTime = clock();
-	int err = Decode(InFileName, OutFileName);	//call decompression, report & return
+	int err = sfkl_Decode(InFileName, OutFileName);	//call decompression, report & return
         
 	long TimeTaken = 1000 * (clock() - StartTime) / CLOCKS_PER_SEC;
 	printf("cpu time taken %ld ms\n", TimeTaken);
