@@ -107,9 +107,9 @@ int ReportError(long error)
 
 int main(int argc, char** argv)
 {
-	char InFileName[MAX_FILEPATH] = "elepiano.sfArk";//"testfile1.sfArk";
-	//char InFileName[MAX_FILEPATH] = "testfile2.sfArk";
-	char OutFileName[MAX_FILEPATH] = "testfile_mac.sf2";
+	char InFileName[SFARKLIB_MAX_FILEPATH] = "elepiano.sfArk";//"testfile1.sfArk";
+	//char InFileName[SFARKLIB_MAX_FILEPATH] = "testfile2.sfArk";
+	char OutFileName[SFARKLIB_MAX_FILEPATH] = "testfile_mac.sf2";
 
 	// Print welcome message...
 
@@ -159,7 +159,7 @@ int main(int argc, char** argv)
 // ============================================================================================
 void msg(const char *MessageText, int Flags)
 {
-	if (Flags & MSG_PopUp)	printf("*** ");
+	if (Flags & SFARKLIB_MSG_PopUp)	printf("*** ");
 	printf("%s\n", MessageText);
 }
 
