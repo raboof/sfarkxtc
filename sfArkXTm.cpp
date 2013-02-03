@@ -37,10 +37,10 @@ char	*ThisVersion = "1.01 beta";	// Version of program
 #include "sfArkLib.h"
 
 // Application-supplied functions...
-void msg(const char *MessageText, int Flags);				// Message display function
-void UpdateProgress(int ProgressPercent);						// Progress indication
-bool GetLicenseAgreement(const char *LicenseText);	// Display/confirm license
-void DisplayNotes(const char *NotesFileName);				// Display notes text file
+void sfkl_msg(const char *MessageText, int Flags);				// Message display function
+void sfkl_UpdateProgress(int ProgressPercent);						// Progress indication
+bool sfkl_GetLicenseAgreement(const char *LicenseText);	// Display/confirm license
+void sfkl_DisplayNotes(const char *NotesFileName, const char *OutFileName);				// Display notes text file
 
 int ReportError(long error)
 {
@@ -153,14 +153,14 @@ int main(int argc, char** argv)
 }
 
 // ============================================================================================
-void msg(const char *MessageText, int Flags)
+void sfkl_msg(const char *MessageText, int Flags)
 {
 	if (Flags & SFARKLIB_MSG_PopUp)	printf("*** ");
 	printf("%s\n", MessageText);
 }
 
 // ============================================================================================
-void UpdateProgress(int ProgressPercent)
+void sfkl_UpdateProgress(int ProgressPercent)
 {
     //char ProgressBar[101];
     //int i;
@@ -182,7 +182,7 @@ void UpdateProgress(int ProgressPercent)
 
 // ==========================================================================================
 // Display/confirm license 
-bool GetLicenseAgreement(const char *LicenseText)
+bool sfkl_GetLicenseAgreement(const char *LicenseText, const char *OutFileName)
 {
         char c;
         
@@ -201,7 +201,7 @@ bool GetLicenseAgreement(const char *LicenseText)
 }
 
 // ============================================================================================
-void DisplayNotes(const char *NotesFilePath)				// Display notes text file
+void sfkl_DisplayNotes(const char *NotesFilePath, const char* OutFileName)				// Display notes text file
 {
 	printf("Notes text file extracted to: %s\n ", NotesFilePath);
 }
