@@ -1,6 +1,6 @@
 all: sfArkXTm
 
-LDFLAGS=-lsfark
+LDFLAGS=-lsfark -lz
 
 #sfArkXTm: sfArkXTm.cpp
 #	$(CXX) sfArkXTm.cpp -o sfArkXTm -lsfArkLib
