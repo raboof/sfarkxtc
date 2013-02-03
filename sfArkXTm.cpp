@@ -103,10 +103,6 @@ int ReportError(long error)
 
 int main(int argc, char** argv)
 {
-	char InFileName[SFARKLIB_MAX_FILEPATH] = "elepiano.sfArk";//"testfile1.sfArk";
-	//char InFileName[SFARKLIB_MAX_FILEPATH] = "testfile2.sfArk";
-	char OutFileName[SFARKLIB_MAX_FILEPATH] = "testfile_mac.sf2";
-
 	// Print welcome message...
 
 	printf("======================================================================\n");
@@ -117,10 +113,9 @@ int main(int argc, char** argv)
         
 	// Open input and output files...
 
-/******
 	char *InFileName = argv[1];
 	char *OutFileName = argv[2];
-	// useage
+	// usage
 	if (argc != 3)
 	{
 		printf("Specify input and output files on the command line, i.e:\n");
@@ -129,17 +124,6 @@ int main(int argc, char** argv)
 		return 1;
 	}
 
-*********/
-	if (argc < 2)
-	{
-		printf("HINT: Drag & drop a sfArk file onto the %s icon to avoid this...\n", ThisProg);
-		printf("Enter name of sfArk file to decompress and press return: \n");
-	}
-	else
-	{
-		strncpy(InFileName, argv[1], sizeof(InFileName)-1);
-	}
-	
 	// Uncompress the file...
 	printf("Uncompressing %s to %s...\n", InFileName, OutFileName);
 
