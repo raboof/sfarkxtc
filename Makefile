@@ -1,6 +1,6 @@
 all: sfArkXTm
 
-LDFLAGS=-lsfark -lz
+LDLIBS=-lsfark -lz
 
 clean: 
 	-rm sfArkXTm
