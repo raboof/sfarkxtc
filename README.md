@@ -1,7 +1,9 @@
-sfArkXTm
+sfarkxtc
 ========
 
-Basic sfArk to sf2 soundfont converter
+sfArk extractor, console version
+
+Converts soundfonts in the legacy sfArk v2 file format to sf2
 
 Building
 ========
@@ -15,4 +17,4 @@ that's it!
 Usage
 =====
 
-    $ ./sfArkXTm somefile.sfArk somefile.sf2
+    $ ./sfarkxtc somefile.sfArk somefile.sf2

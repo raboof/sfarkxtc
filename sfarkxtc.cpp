@@ -25,7 +25,7 @@
 
 //	Initial version,	andyi, 14-Sep-2002
 
-const char	*ThisProg = "sfArkXTm";
+const char	*ThisProg = "sfarkxtc";
 const char	*ThisVersion = "3.0-SNAPSHOT";	// Version of program
 
 // Standard includes...

@@ -1,11 +1,11 @@
-all: sfArkXTm
+all: sfarkxtc
 
 INSTALL?=install
 
 LDLIBS=-lsfark -lz
 
 clean: 
-	-rm sfArkXTm
+	-rm sfarkxtc 2>/dev/null || true
 
-install: sfArkXTm
-	$(INSTALL) -D sfArkXTm $(DESTDIR)/usr/local/bin/sfArkXTm
+install: sfarkxtc
+	$(INSTALL) -D sfarkxtc $(DESTDIR)/usr/local/bin/sfarkxtc
