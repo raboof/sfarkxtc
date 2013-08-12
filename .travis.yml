@@ -1,0 +1,6 @@
+language: cpp
+before_install: git clone https://github.com/raboof/sfArkLib.git; cd sfArkLib; make ; sudo make install; cd ..
+script: make
+compiler:
+ - clang
+ - gcc
