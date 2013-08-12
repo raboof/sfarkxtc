@@ -25,8 +25,8 @@
 
 //	Initial version,	andyi, 14-Sep-2002
 
-char	*ThisProg = "sfArkXTm";
-char	*ThisVersion = "1.01 beta";	// Version of program
+const char	*ThisProg = "sfArkXTm";
+const char	*ThisVersion = "1.01 beta";	// Version of program
 
 // Standard includes...
 #include <stdio.h>
@@ -45,7 +45,7 @@ void sfkl_DisplayNotes(const char *NotesFileName, const char *OutFileName);				/
 int ReportError(long error)
 {
 	// Display an error message, return 0 if there was no error else 1
-	char *msg;
+	const char *msg;
 
 	switch (error)
 	{
