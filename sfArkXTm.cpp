@@ -105,11 +105,11 @@ int main(int argc, char** argv)
 {
 	// Print welcome message...
 
-	printf("======================================================================\n");
+	printf("========================================================================\n");
 	printf("%s %s ", ThisProg, ThisVersion);
 	printf("(using sfArkLib version: %d)\n", sfkl_GetVersion());
-	printf("copyright (c) 1998-2002 melodymachine.com, free for non-commercial use\n");
-	printf("======================================================================\n");
+	printf("copyright (c) 1998-2002 melodymachine.com, distributed under the GNU GPL\n");
+	printf("========================================================================\n");
         
 	// Open input and output files...
 
