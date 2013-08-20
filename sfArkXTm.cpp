@@ -156,11 +156,12 @@ void sfkl_UpdateProgress(int ProgressPercent)
     //ProgressBar[100] = '\0';
         
     //printf(ProgressBar);
-    //printf("\r");
+    printf("\r");
     
     //printf("*");
-    printf("Progress: %d%%\n", ProgressPercent);
-    //if (ProgressPercent == 100)  printf("\n");
+    printf("Progress: %d%%", ProgressPercent);
+    fflush(stdout);
+    if (ProgressPercent == 100)  printf("\n");
 	return;
 }
 
