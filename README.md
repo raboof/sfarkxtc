@@ -1,6 +1,8 @@
 sfarkxtc
 ========
 
+[![Build Status](https://travis-ci.org/raboof/sfarkxtc.svg?branch=master)](https://travis-ci.org/raboof/sfarkxtc)
+
 sfArk extractor, console version
 
 Converts soundfonts in the legacy sfArk v2 file format to sf2
