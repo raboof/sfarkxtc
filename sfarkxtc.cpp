@@ -34,7 +34,7 @@ const char	*ThisVersion = "3.0-SNAPSHOT";	// Version of program
 #include <time.h>
 //#include <iostream>
 
-#include "sfArkLib.h"
+#include <sfArkLib.h>
 
 // Application-supplied functions...
 void sfkl_msg(const char *MessageText, int Flags);				// Message display function
