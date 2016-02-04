@@ -19,7 +19,7 @@ Prerequisites
 Building
 --------
 
-    $ make
+    $ sudo make install
 
 that's it!
     
