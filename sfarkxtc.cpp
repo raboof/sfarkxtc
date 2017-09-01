@@ -20,7 +20,7 @@
 //  based on SDL_Test
 
 //  Reads an existing .sfArk file and writes an sf2 file using standard file i/o
-//	Return 0 if successful, 1 if some error occured.
+//	Return 0 if successful, 1 if some error occurred.
 //  Info and error messages are printed to stdout
 
 //	Initial version,	andyi, 14-Sep-2002
