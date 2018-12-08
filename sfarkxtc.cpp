@@ -8,7 +8,7 @@
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // sfArkLib is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -49,7 +49,7 @@ int ReportError(long error)
 
 	switch (error)
 	{
-		case SFARKLIB_SUCCESS:	
+		case SFARKLIB_SUCCESS:
 			msg = "Successful";
 			break;
 		case SFARKLIB_ERR_INIT:
@@ -87,7 +87,7 @@ int ReportError(long error)
 	}
 	printf("Result:	%s  errorcode %ld\n", msg, -error);
 
-	if(error != SFARKLIB_SUCCESS) 
+	if(error != SFARKLIB_SUCCESS)
 	{
 		printf("*** FAILED ***\n");
 		return 1;
@@ -110,26 +110,29 @@ int main(int argc, char** argv)
 	printf("(using sfArkLib version: %d)\n", sfkl_GetVersion());
 	printf("copyright (c) 1998-2002 melodymachine.com, distributed under the GNU GPL\n");
 	printf("========================================================================\n");
-        
+
 	// Open input and output files...
 
 	char *InFileName = argv[1];
-	char *OutFileName = argv[2];
+	char *OutFileName = NULL;
 	// usage
-	if (argc != 3)
+	if (argc < 2)
 	{
 		printf("Specify input and output files on the command line, i.e:\n");
-		printf("%s <InputFilename> <OutputFilename>\n", ThisProg);
-		printf("Press ENTER."); //getc(stdin);
+		printf("%s <InputFilename> [OutputFilename]\n", ThisProg);
 		return 1;
 	}
 
-	// Uncompress the file...
-	printf("Uncompressing %s to %s...\n", InFileName, OutFileName);
+	if (argc == 3)
+	{
+		OutFileName = argv[2];
+		printf("Uncompressing %s to %s...\n", InFileName, OutFileName);
+	}
 
+	// Uncompress the file...
 	long StartTime = clock();
 	int err = sfkl_Decode(InFileName, OutFileName);	//call decompression, report & return
-        
+
 	long TimeTaken = 1000 * (clock() - StartTime) / CLOCKS_PER_SEC;
 	printf("cpu time taken %ld ms\n", TimeTaken);
 
@@ -148,16 +151,16 @@ void sfkl_UpdateProgress(int ProgressPercent)
 {
     //char ProgressBar[101];
     //int i;
-    
+
     //for (i = 0; i < ProgressPercent; i++)
-    //    ProgressBar[i] = '*';
+    //	  ProgressBar[i] = '*';
     //for ( ; i < 100; i++)
-    //    ProgressBar[i] = '-';
+    //	  ProgressBar[i] = '-';
     //ProgressBar[100] = '\0';
-        
+
     //printf(ProgressBar);
     printf("\r");
-    
+
     //printf("*");
     printf("Progress: %d%%", ProgressPercent);
     fflush(stdout);
@@ -166,18 +169,18 @@ void sfkl_UpdateProgress(int ProgressPercent)
 }
 
 // ==========================================================================================
-// Display/confirm license 
+// Display/confirm license
 bool sfkl_GetLicenseAgreement(const char *LicenseText, const char *OutFileName)
 {
-        char c;
-        
+	char c;
+
 	printf("%s\n\nDo you agree to the above terms? (Y/N) ", LicenseText);
 	//c = getc(stdin);
-        c = 'y';
+	c = 'y';
 	while (c != 'y' && c != 'Y' && c != 'n' &&  c != 'N')
 	{
-            printf("\nPlease answer Y or N and press return: ");
-            c = getc(stdin);
+	    printf("\nPlease answer Y or N and press return: ");
+	    c = getc(stdin);
 	}
 	if (c == 'y' || c == 'Y')
 		return true;
